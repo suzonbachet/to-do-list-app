@@ -4,7 +4,7 @@ function newItem(){
   let li = $('<li></li>');
   let list = $('#list');
   let inputValue = $('#input').val();
-  li.append.(inputValue);
+  li.append(inputValue);
 
    if (inputValue === '') {
      alert("You must write something!");
@@ -21,15 +21,12 @@ function newItem(){
   let crossOutButton = $('<crossOutButton></crossOutButton>');
   li.append(crossOutButton);
   crossOutButton.append(document.createTextNode('X'));
-  crossOutButton.on.('click', deleteListItem) {
-  li.deleteListItem();
-    }
-
-//Adding CLASS DELETE (DISPLAY: NONE) from the css
-   function deleteListItem(){
- 		li.addClass('delete')
- 	}
+  crossOutButton.on.('click', function deleteListItem() {
+  li.addClass('delete');
+    });
 
 //Reordering the items: 
-   li.sortable();
+   list.sortable();
 }
+
+// Add an item to the list when enter key is pressed
